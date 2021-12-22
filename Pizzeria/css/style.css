@@ -22,7 +22,6 @@ ul {
     list-style-type: none;
     overflow: hidden;
     background-color: #202020;
-
 }
 
 li a {
@@ -43,4 +42,9 @@ li a:hover {
 }
 .active:hover {
     background-color: #b60015;
+}
+
+.article1 {
+    background-image: url("../images/firstImage.jpg");
+    height: 600px;
 }
