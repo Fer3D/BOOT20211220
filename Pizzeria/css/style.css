@@ -4,36 +4,40 @@
     font-family: sans-serif;
 }
 
+header {
+    background-color: #ddffe5;
+}
+
 .logotype {
     display: block;
     margin: 0 auto;
     padding: 10px;
     width: 100px;
+
 }
 
 ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
     overflow: hidden;
     background-color: #202020;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
+
+}
+
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 24px 16px;
     text-decoration: none;
-  }
-  
-  li a:hover {
+}
+
+li a:hover {
     background-color: #111;
     transition: 0.3s;
-  }
+}
 
-  .active {
+.active {
     background-color: #e2001a;
-  }
+}
