@@ -1,7 +1,16 @@
+:root {
+    --navbar: #e2001a;
+    --backgroundNavbar: #202020;
+  }
+
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+}
+
+body {
+    background-color: #eeeeee;
 }
 
 header {
@@ -13,7 +22,6 @@ header {
 .logotype {
     padding: 10px;
     width: 100px;
-
 }
 
 ul {
@@ -21,7 +29,7 @@ ul {
     justify-content: center;
     list-style-type: none;
     overflow: hidden;
-    background-color: #202020;
+    background-color: var(--backgroundNavbar);
 }
 
 li a {
@@ -37,8 +45,14 @@ li a:hover {
     transition: 0.3s;
 }
 
+li input, li button {
+    margin-top: 23px;
+    display: block;
+    text-align: center;
+}
+
 .active {
-    background-color: #e2001a;
+    background-color: var(--navbar);
 }
 .active:hover {
     background-color: #b60015;
@@ -47,4 +61,8 @@ li a:hover {
 .article1 {
     background-image: url("../images/firstImage.jpg");
     height: 600px;
+}
+
+.article2 img {
+    border-radius: 5px;
 }
