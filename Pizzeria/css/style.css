@@ -16,7 +16,8 @@ body {
 header {
     display: flex;
     justify-content: center;
-    background-color: #ecfff0;
+    width: 100%;
+
 }
 
 .logotype {
@@ -24,6 +25,9 @@ header {
     width: 100px;
 }
 
+nav {
+    width: 100%;
+}
 ul {
     display: flex;
     justify-content: center;
@@ -61,8 +65,16 @@ li input, li button {
 .article1 {
     background-image: url("../images/firstImage.jpg");
     height: 600px;
+    
+}
+
+.article2 {
+    display: flex;
+    justify-content: center;
+    
 }
 
 .article2 img {
     border-radius: 5px;
+    margin: 10px;
 }
