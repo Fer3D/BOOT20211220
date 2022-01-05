@@ -4,6 +4,9 @@ class Display {
         this.displayCurrentValue = displayCurrentValue;
         this.calculator = new Calculator();
         this.previousValue = '';
-        this.actualValue = '';
+        this.currentValue = '';
+    }
+    attachNumber(number) {
+        this.currentValue = number;
     }
 }
