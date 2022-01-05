@@ -63,10 +63,10 @@ button:focus {
     box-shadow: 0px 0px 0px 10px #00000030;
 }
 
-.displayCurrentValue {
+.current-value {
     font-size: 1.5em;
 }
 
-.displayPreviousValue {
+.previous-value {
     font-size: 2em;
 }
