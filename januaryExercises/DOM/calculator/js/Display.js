@@ -1,8 +1,9 @@
 class Display {
-    constructor(previousValue, displayCurrentValue) {
+    constructor(displayPreviousValue, displayCurrentValue) {
         this.displayPreviousValue = displayPreviousValue;
         this.displayCurrentValue = displayCurrentValue;
         this.calculator = new Calculator();
-        this
+        this.previousValue = '';
+        this.actualValue = '';
     }
 }
