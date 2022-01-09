@@ -1,11 +1,21 @@
+:root {
+    --main-bg-color: #261C2C;
+    --main-font-color: #84DFFF;
+  }
+
+@font-face {
+    font-family: "GortonDigitalRegular";
+    src: url("./GortonDigitalRegular.otf");
+  }
+
 * {
-    font-family: 'Fraunces', serif;
-    color: #84DFFF;
+    font-family: 'GortonDigitalRegular', serif;
+    color: var(--main-font-color);
 }
 
 body {
     margin: 0;
-    background-color: #261C2C;
+    background-color: var(--main-bg-color);
 }
 
 .container {
@@ -22,7 +32,7 @@ body {
     background-color: #3E2C41;
     padding: 15px;
     border-radius: 32px;
-    box-shadow: 15px 10px 0px 5px #00000030;
+    box-shadow: 5px 5px 0px 5px #312333;
 }
 
 button {
@@ -37,7 +47,8 @@ button {
 }
 
 button:active {
-    background-color: #6E85B2;
+    background-color: #50486e;
+    box-shadow: inset 2px 2px 0px #00000030;
 }
 
 button:focus {
@@ -63,10 +74,10 @@ button:focus {
     box-shadow: 0px 0px 0px 10px #00000030;
 }
 
-.current-value {
+#current-value {
     font-size: 1.5em;
 }
 
-.previous-value {
+#previous-value {
     font-size: 2em;
 }

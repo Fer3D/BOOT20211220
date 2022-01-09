@@ -8,3 +8,7 @@ const display = new Display(displayPreviousValue, displayCurrentValue);
 numberButtons.forEach(button => {
     button.addEventListener('click', () => display.attachNumber(button.innerHTML));
 });
+
+operatorButtons.forEach(button => {
+    button.addEventListener('click', () => display.compute(button.value))
+});
