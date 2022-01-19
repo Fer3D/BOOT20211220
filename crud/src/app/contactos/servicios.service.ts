@@ -1,19 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ContactosViewModelService {
-  protected modo: ModoCRUD = 'list';
-  protected listado: Array<any> = [];
-  protected elemento: any = {};
-  protected idOriginal: any = null;
-
-  constructor() {}
-}
 export type ModoCRUD = 'list' | 'add' | 'edit' | 'view' | 'delete';
 
 export abstract class RESTDAOService<T, K> {
@@ -43,12 +32,47 @@ export abstract class RESTDAOService<T, K> {
 }
 
 @Injectable({
-  providedIn: 'root'
- })
- export class ContactosDAOService extends RESTDAOService<any, any> {
+  providedIn: 'root',
+})
+export class ContactosDAOService extends RESTDAOService<any, any> {
   constructor(http: HttpClient) {
-  super(http, 'contactos', {
-  context: new HttpContext().set(AUTH_REQUIRED, true)
-  });
+    super(http, 'contactos', {
+      context: new HttpContext().set(AUTH_REQUIRED, true),
+    });
   }
- }
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ContactosViewModelService {
+  protected modo: ModoCRUD = 'list';
+  protected listado: Array<any> = [];
+  protected elemento: any = {};
+  protected idOriginal: any = null;
+
+  constructor(
+    protected notify: NotificationService,
+    protected out: LoggerService,
+    protected dao: ContactosDAOService
+  ) {}
+
+  public get Modo(): ModoCRUD {
+    return this.modo;
+  }
+  public get Listado(): Array<any> {
+    return this.listado;
+  }
+  public get Elemento(): any {
+    return this.elemento;
+  }
+  public list(): void {
+    this.dao.query().subscribe({
+      next: (data) => {
+        this.listado = data;
+        this.modo = 'list';
+      },
+      error: (err) => this.notify.add(err.message),
+    });
+  }
+}
