@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ServiciosService {
+export class ContactosViewModelService {
   constructor() {}
 }
 export type ModoCRUD = 'list' | 'add' | 'edit' | 'view' | 'delete';
