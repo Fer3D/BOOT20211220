@@ -7,6 +7,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ContactosViewModelService {
+  protected modo: ModoCRUD = 'list';
+  protected listado: Array<any> = [];
+  protected elemento: any = {};
+  protected idOriginal: any = null;
+
   constructor() {}
 }
 export type ModoCRUD = 'list' | 'add' | 'edit' | 'view' | 'delete';
