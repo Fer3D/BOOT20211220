@@ -75,4 +75,36 @@ export class ContactosViewModelService {
       error: (err) => this.notify.add(err.message),
     });
   }
+  public add(): void {
+    this.elemento = {};
+    this.modo = 'add';
+  }
+  public edit(key: any): void {
+    this.dao.get(key).subscribe({
+      next: (data) => {
+        this.elemento = data;
+        this.idOriginal = key;
+        this.modo = 'edit';
+      },
+      error: (err) => this.notify.add(err.message),
+    });
+  }
+  public view(key: any): void {
+    this.dao.get(key).subscribe({
+      next: (data) => {
+        this.elemento = data;
+        this.modo = 'view';
+      },
+      error: (err) => this.notify.add(err.message),
+    });
+  }
+  public delete(key: any): void {
+    if (!window.confirm('¿Seguro?')) {
+      return;
+    }
+    this.dao.remove(key).subscribe({
+      next: (data) => this.load(), // this.list(),
+      error: (err) => this.notify.add(err.message),
+    });
+  }
 }
